@@ -10,7 +10,7 @@
 *{box-sizing:border-box}html{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:18px}body{margin:0;min-height:100vh;background:radial-gradient(circle at 10% -10%,#203867 0,transparent 34%),var(--bg)}
 main{max-width:980px;margin:auto;padding:calc(24px + env(safe-area-inset-top)) 16px calc(44px + env(safe-area-inset-bottom))}
 header{margin-bottom:22px}h1{font-size:clamp(2.5rem,10vw,4.4rem);line-height:.95;margin:0 0 .5rem;letter-spacing:-.05em}.intro{margin:0;color:var(--muted);font-size:1.08rem}.search{width:100%;margin:18px 0 4px;border:1px solid var(--line);background:rgba(20,27,45,.88);color:var(--text);border-radius:16px;padding:15px 16px;font:inherit;font-size:1rem;outline:none}.search:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(120,169,255,.16)}
-section{margin-top:28px}.section-head{margin-bottom:12px}.section-head h2{font-size:1.25rem;margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:12px}.card{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line);background:linear-gradient(180deg,var(--panel2),var(--panel));border-radius:18px;padding:18px 16px;text-decoration:none;color:var(--text);box-shadow:var(--shadow);min-height:74px;transition:transform .12s ease,border-color .12s ease}.card:active{transform:scale(.985)}.card:hover{border-color:#48628f}.name{font-weight:800;font-size:1.15rem;line-height:1.15}.badge{font-size:.68rem;font-weight:900;letter-spacing:.06em;border:1px solid currentColor;border-radius:999px;padding:4px 8px;white-space:nowrap}.legacy{color:var(--green)}.preview{color:var(--amber)}.worker{color:var(--pink)}.github{color:var(--accent)}.hidden{display:none!important}footer{margin-top:30px;color:var(--muted);font-size:.78rem;text-align:center}
+section{margin-top:28px}.section-head{margin-bottom:12px}.section-head h2{font-size:1.25rem;margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:12px}.card{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line);background:linear-gradient(180deg,var(--panel2),var(--panel));border-radius:18px;padding:18px 16px;text-decoration:none;color:var(--text);box-shadow:var(--shadow);min-height:74px;transition:transform .12s ease,border-color .12s ease}.card:active{transform:scale(.985)}.card:hover{border-color:#48628f}.name{font-weight:800;font-size:1.15rem;line-height:1.15}.badge{font-size:.68rem;font-weight:900;letter-spacing:.06em;border:1px solid currentColor;border-radius:999px;padding:4px 8px;white-space:nowrap}.legacy{color:var(--green)}.preview{color:var(--amber)}.worker{color:var(--pink)}.github{color:var(--accent)}.global{color:#b19cff}.hidden{display:none!important}footer{margin-top:30px;color:var(--muted);font-size:.78rem;text-align:center}
 @media(max-width:520px){html{font-size:19px}.grid{grid-template-columns:1fr}.card{min-height:78px;padding:18px 16px}.name{font-size:1.18rem}.badge{font-size:.66rem}}
 @media (prefers-color-scheme:light){:root{--bg:#f4f6fb;--panel:#fff;--panel2:#fff;--text:#111827;--muted:#68758a;--line:#d9e0ec;--accent:#285fb8;--green:#17834d;--amber:#9b6500;--pink:#b02b66;--shadow:0 8px 24px rgba(38,55,82,.09)}body{background:radial-gradient(circle at 10% -10%,#dbe8ff 0,transparent 34%),var(--bg)}.search{background:#fff;color:var(--text)}}
 </style>
@@ -22,6 +22,13 @@ section{margin-top:28px}.section-head{margin-bottom:12px}.section-head h2{font-s
 <p class="intro">Calendars, previews, workers, control.</p>
 <input id="q" class="search" type="search" placeholder="Search…" autocomplete="off" aria-label="Search links">
 </header>
+
+<section>
+<div class="section-head"><h2>Global</h2></div>
+<div class="grid">
+<a class="card" data-search="global all events combined taxonomy filters preview" href="./global/"><span class="name">All Events</span><span class="badge global">GLOBAL</span></a>
+</div>
+</section>
 
 <section>
 <div class="section-head"><h2>Live / Legacy</h2></div>
@@ -57,12 +64,13 @@ section{margin-top:28px}.section-head{margin-bottom:12px}.section-head h2{font-s
 <div class="grid">
 <a class="card" data-search="calendar core github repository" href="https://github.com/mim21-projects/calendar-core"><span class="name">Calendar Core</span><span class="badge github">GITHUB</span></a>
 <a class="card" data-search="calendar core pr 51 preview parity draft" href="https://github.com/mim21-projects/calendar-core/pull/51"><span class="name">PR #51</span><span class="badge github">GITHUB</span></a>
+<a class="card" data-search="calendar core pr 52 taxonomy global source draft" href="https://github.com/mim21-projects/calendar-core/pull/52"><span class="name">PR #52</span><span class="badge github">GITHUB</span></a>
 <a class="card" data-search="development control plane dcp issue 64 calendar core" href="https://github.com/mim21-projects/development-control-plane/issues/64"><span class="name">DCP #64</span><span class="badge github">GITHUB</span></a>
 <a class="card" data-search="intimi bluz legacy source repository github" href="https://github.com/mim21-projects/intimi-beluz-events-src"><span class="name">Intimi Legacy source</span><span class="badge github">GITHUB</span></a>
 </div>
 </section>
 
-<footer>Calendar Ops · 2026-09-19</footer>
+<footer>Calendar Ops · 2026-09-20</footer>
 </main>
 <script>
 const q=document.getElementById('q');
