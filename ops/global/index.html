@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<title>כל האירועים · Calendar Ops</title>
+<style>
+:root{color-scheme:dark light;--bg:#0b1020;--panel:#141b2d;--panel2:#192238;--text:#f5f7fb;--muted:#9aa7bd;--line:#2b3856;--accent:#7db0ff;--chip:#1d2944;--shadow:0 10px 28px rgba(0,0,0,.2)}
+*{box-sizing:border-box}html{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;font-size:18px;background:var(--bg);color:var(--text)}body{margin:0;min-height:100vh;background:radial-gradient(circle at 12% -8%,#213968 0,transparent 32%),var(--bg)}main{max-width:980px;margin:auto;padding:calc(22px + env(safe-area-inset-top)) 14px calc(44px + env(safe-area-inset-bottom))}a{color:inherit}header{margin-bottom:16px}.back{display:inline-block;color:var(--muted);text-decoration:none;margin-bottom:12px}h1{font-size:clamp(2rem,9vw,3.8rem);line-height:.98;margin:0;letter-spacing:-.04em}.sub{margin:.55rem 0 0;color:var(--muted);font-size:.96rem}.summary{margin-top:9px;font-weight:750}.search{width:100%;margin:16px 0 8px;background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:15px;padding:14px 15px;font:inherit;font-size:1rem;outline:none}.search:focus{border-color:var(--accent)}
+.filters{display:grid;gap:12px;margin:14px 0 20px}.filter-title{font-size:.82rem;color:var(--muted);margin:0 0 6px}.chips{display:flex;gap:7px;overflow-x:auto;padding:1px 0 4px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}.chip{flex:0 0 auto;border:1px solid var(--line);background:var(--chip);color:var(--text);border-radius:999px;padding:8px 12px;font:inherit;font-size:.83rem;cursor:pointer}.chip[aria-pressed="true"]{background:var(--accent);color:#07111f;border-color:var(--accent);font-weight:800}.more{border:1px solid var(--line);border-radius:15px;background:rgba(20,27,45,.56);padding:10px 12px}.more summary{cursor:pointer;color:var(--muted);font-size:.9rem}.more .axis{margin-top:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:11px}.card{border:1px solid var(--line);background:linear-gradient(180deg,var(--panel2),var(--panel));border-radius:18px;padding:16px;box-shadow:var(--shadow)}.top{display:flex;gap:8px;align-items:center;justify-content:space-between}.source{font-size:.72rem;font-weight:850;border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--accent)}.when{font-size:.8rem;color:var(--muted);white-space:nowrap}.title{font-size:1.18rem;line-height:1.22;margin:10px 0 7px}.where{color:var(--muted);font-size:.88rem;margin:0}.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px}.tag{font-size:.68rem;border-radius:999px;padding:4px 7px;background:rgba(125,176,255,.11);border:1px solid rgba(125,176,255,.24);color:#b8d5ff}.meta{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:12px;font-size:.8rem}.details{color:var(--accent);text-decoration:none;font-weight:750}.empty,.loading,.error{border:1px dashed var(--line);border-radius:16px;padding:20px;text-align:center;color:var(--muted);grid-column:1/-1}.error{color:#ffb4b4}.prototype{font-size:.72rem;color:var(--muted);margin-top:22px;line-height:1.4}
+@media(max-width:520px){html{font-size:19px}.grid{grid-template-columns:1fr}.card{padding:17px}.title{font-size:1.22rem}.sub{font-size:.9rem}}
+@media(prefers-color-scheme:light){:root{--bg:#f4f6fb;--panel:#fff;--panel2:#fff;--text:#111827;--muted:#69768a;--line:#dbe2ee;--accent:#2965bd;--chip:#f2f5fa;--shadow:0 7px 22px rgba(38,55,82,.08)}body{background:radial-gradient(circle at 12% -8%,#dce9ff 0,transparent 32%),var(--bg)}.chip[aria-pressed="true"]{color:#fff}.tag{color:#245da7;background:#edf4ff;border-color:#ccdef8}}
+</style>
+</head>
+<body><main>
+<header>
+<a class="back" href="../">← Calendar Ops</a>
+<h1>כל האירועים</h1>
+<p class="sub">תצוגה משולבת וניסיונית: Intimi Bluz · Merhav Bari · Gmail Events · Kfar Saba</p>
+<div id="summary" class="summary">טוען אירועים…</div>
+<input id="search" class="search" type="search" placeholder="חיפוש…" autocomplete="off" aria-label="חיפוש אירועים">
+</header>
+<section class="filters" aria-label="מסננים">
+<div class="axis"><p class="filter-title">יומן / ערוץ</p><div id="source-filters" class="chips"></div></div>
+<div class="axis"><p class="filter-title">סוג אירוע</p><div id="modality-filters" class="chips"></div></div>
+<div class="axis"><p class="filter-title">רמת מיניות</p><div id="sexuality-filters" class="chips"></div></div>
+<details class="more"><summary>עוד מסננים</summary>
+<div class="axis"><p class="filter-title">מגע</p><div id="touch-filters" class="chips"></div></div>
+<div class="axis"><p class="filter-title">עירום</p><div id="nudity-filters" class="chips"></div></div>
+<div class="axis"><p class="filter-title">סוג קשר</p><div id="relationship-filters" class="chips"></div></div>
+</details>
+</section>
+<section id="grid" class="grid"><div class="loading">טוען את ארבעת היומנים…</div></section>
+<p class="prototype">Prototype בלבד. הסיווג כרגע שמרני ודטרמיניסטי לפי טקסט ציבורי שכבר פורסם; Tantra/Cuddle אינם מסווגים אוטומטית כמיניים. “לא מסווג” פירושו שאין מספיק ראיה מפורשת, לא שהאירוע שייך לצד השני של הציר.</p>
+</main>
+<script>
+(() => {
+'use strict';
+const feeds=[
+ {id:'intimi',label:'Intimi Bluz',url:'/intimi-beluz-events/calendar.ics'},
+ {id:'merhav',label:'Merhav Bari',url:'/merhav-bari/calendar.ics'},
+ {id:'gmail',label:'Gmail Events',url:'/gmail-events/calendar.ics'},
+ {id:'kfar',label:'Kfar Saba',url:'/kfar-saba-events/calendar.ics'}
+];
+const labels={
+ modality:{tantra:'Tantra',cuddle:'Cuddle',dance:'Dance',workshop:'Workshop',party:'Party',lecture:'Lecture',retreat:'Retreat',bodywork:'Bodywork',culture:'Culture',social:'Social'},
+ sexuality:{unknown:'לא מסווג',none:'לא מיני',sensual:'חושני',erotic:'ארוטי',sexual:'מיני'},
+ touch:{unknown:'לא מסווג',none:'ללא מגע',optional:'מגע אפשרי',expected:'מגע צפוי',central:'מגע מרכזי'},
+ nudity:{unknown:'לא מסווג',none:'ללא עירום',possible:'עירום אפשרי',expected:'עירום צפוי'},
+ relationship:{unknown:'לא מסווג',neutral:'ניטרלי',monogamy:'מונוגמי','non-monogamy':'לא־מונוגמי / פולי',mixed:'מעורב'}
+};
+const filterOptions={
+ source:feeds.map(x=>[x.id,x.label]),
+ modality:Object.entries(labels.modality),
+ sexuality:Object.entries(labels.sexuality),
+ touch:Object.entries(labels.touch),
+ nudity:Object.entries(labels.nudity),
+ relationship:Object.entries(labels.relationship)
+};
+const active={source:new Set(),modality:new Set(),sexuality:new Set(),touch:new Set(),nudity:new Set(),relationship:new Set()};
+let events=[];
+const $=id=>document.getElementById(id);
+function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function unfold(raw){const lines=raw.replace(/\r\n/g,'\n').replace(/\r/g,'\n').split('\n'),out=[];for(const line of lines){if((line.startsWith(' ')||line.startsWith('\t'))&&out.length)out[out.length-1]+=line.slice(1);else out.push(line);}return out;}
+function unescapeIcs(v){return (v||'').replace(/\\[nN]/g,'\n').replace(/\\,/g,',').replace(/\\;/g,';').replace(/\\\\/g,'\\').trim();}
+function parseDate(value){if(!value)return null;const v=value.trim();if(/^\d{8}$/.test(v))return new Date(Number(v.slice(0,4)),Number(v.slice(4,6))-1,Number(v.slice(6,8)),12);const m=v.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})?(Z)?$/);if(!m)return null;const parts=m.slice(1,7).map(x=>Number(x||0));return m[7]?new Date(Date.UTC(parts[0],parts[1]-1,parts[2],parts[3],parts[4],parts[5])):new Date(parts[0],parts[1]-1,parts[2],parts[3],parts[4],parts[5]);}
+function parseIcs(raw,feed){const lines=unfold(raw),result=[];let cur=null;for(const line of lines){if(line==='BEGIN:VEVENT'){cur={feed};continue}if(line==='END:VEVENT'){if(cur&&cur.summary&&cur.start)result.push(cur);cur=null;continue}if(!cur)continue;const colon=line.indexOf(':');if(colon<0)continue;const left=line.slice(0,colon),value=line.slice(colon+1),key=left.split(';')[0].toUpperCase();if(key==='UID')cur.uid=unescapeIcs(value);else if(key==='SUMMARY')cur.summary=unescapeIcs(value);else if(key==='DESCRIPTION')cur.description=unescapeIcs(value);else if(key==='LOCATION')cur.location=unescapeIcs(value);else if(key==='URL')cur.url=unescapeIcs(value);else if(key==='DTSTART')cur.start=parseDate(value);else if(key==='DTEND')cur.end=parseDate(value);}return result;}
+function has(text,needles){return needles.some(n=>text.includes(n.toLowerCase()));}
+function classify(event){const text=((event.summary||'')+' '+(event.description||'')).toLowerCase();const modalities=new Set();const patterns={tantra:['tantra','טנטרה','טנטרי','טנטרית'],cuddle:['cuddle','cuddling','cuddles','קאדל','קאדלים'],dance:['dance','dancing','ריקוד','מחול'],workshop:['workshop','סדנה'],party:['party','מסיבה'],lecture:['lecture','הרצאה'],retreat:['retreat','ריטריט'],bodywork:['bodywork','massage','מסאז','מסאג','עיסוי'],culture:['theater','theatre','concert','exhibition','מופע','תיאטרון','קונצרט','תערוכה'],social:['meetup','social gathering','מפגש חברתי']};for(const [k,p] of Object.entries(patterns))if(has(text,p))modalities.add(k);
+let touch='unknown';if(has(text,['no touch','without touch','ללא מגע','בלי מגע']))touch='none';else if(has(text,['optional touch','touch optional','מגע אופציונלי','מגע לבחירה']))touch='optional';else if(modalities.has('cuddle')||modalities.has('bodywork'))touch='central';else if(has(text,['guided touch','hands-on','מגע מודרך','מגע פיזי']))touch='expected';
+let sexuality='unknown';if(has(text,['non-sexual','nonsexual','not sexual','לא מיני','לא מינית','ללא מיניות']))sexuality='none';else if(has(text,['sexual play','sexual touch','sexual activity','sex party','מגע מיני','פעילות מינית','מסיבת סקס']))sexuality='sexual';else if(has(text,['erotic','ארוטי','ארוטית','אירוטי','אירוטית']))sexuality='erotic';else if(has(text,['sensual','חושני','חושנית']))sexuality='sensual';
+let nudity='unknown';if(has(text,['no nudity','fully clothed','ללא עירום','בלבוש מלא']))nudity='none';else if(has(text,['nudity required','nude required','naked','בעירום','עירום מלא']))nudity='expected';else if(has(text,['nudity optional','clothing optional','optional nudity','עירום אפשרי','לבוש אופציונלי','nudity','עירום']))nudity='possible';
+const nonmono=has(text,['non-monogamy','non monogamy','non-monogamous','polyamory','polyamorous','אי מונוגמיה','לא מונוגמי','פוליאמוריה','פוליאמורי','פוליאמורית']);const mixed=has(text,['monogamy and non-monogamy','monogamous and non-monogamous','מונוגמיה ואי מונוגמיה']);const mono=has(text,['monogamy','monogamous','מונוגמיה','מונוגמי','מונוגמית'])&&(!nonmono||mixed);let relationship=mixed?'mixed':nonmono?'non-monogamy':mono?'monogamy':has(text,['relationship neutral','ללא תלות בסוג הקשר'])?'neutral':'unknown';
+return {modalities,touch,sexuality,nudity,relationship};}
+function formatWhen(d){if(!d)return'';return new Intl.DateTimeFormat('he-IL',{timeZone:'Asia/Jerusalem',weekday:'short',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).format(d);}
+function eventTags(ev){const t=ev.taxonomy,out=[];for(const m of t.modalities)out.push(labels.modality[m]);if(t.sexuality!=='unknown')out.push(labels.sexuality[t.sexuality]);if(t.touch!=='unknown')out.push(labels.touch[t.touch]);if(t.nudity!=='unknown')out.push(labels.nudity[t.nudity]);if(t.relationship!=='unknown')out.push(labels.relationship[t.relationship]);return out;}
+function matches(ev){const q=$('search').value.trim().toLowerCase();if(q&&!((ev.summary||'')+' '+(ev.description||'')+' '+(ev.location||'')+' '+ev.feed.label).toLowerCase().includes(q))return false;if(active.source.size&&!active.source.has(ev.feed.id))return false;if(active.modality.size&&![...ev.taxonomy.modalities].some(x=>active.modality.has(x)))return false;for(const axis of ['sexuality','touch','nudity','relationship'])if(active[axis].size&&!active[axis].has(ev.taxonomy[axis]))return false;return true;}
+function render(){const visible=events.filter(matches);$('summary').textContent=`${visible.length} מתוך ${events.length} אירועים`;const grid=$('grid');if(!visible.length){grid.innerHTML='<div class="empty">אין אירועים שמתאימים למסננים.</div>';return}grid.innerHTML=visible.map(ev=>{const tags=eventTags(ev).map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('');let host='';try{if(ev.url)host=new URL(ev.url).hostname.replace(/^www\./,'')}catch{}return `<article class="card"><div class="top"><span class="source">${escapeHtml(ev.feed.label)}</span><time class="when">${escapeHtml(formatWhen(ev.start))}</time></div><h2 class="title">${escapeHtml(ev.summary)}</h2>${ev.location?`<p class="where">📍 ${escapeHtml(ev.location)}</p>`:''}${tags?`<div class="tags">${tags}</div>`:''}<div class="meta">${ev.url?`<a class="details" href="${escapeHtml(ev.url)}" target="_blank" rel="noopener">פרטים ↗</a>`:''}${host?`<span>מקור קישור: ${escapeHtml(host)}</span>`:''}</div></article>`}).join('');}
+function makeFilters(axis,target){const node=$(target);for(const [value,label] of filterOptions[axis]){const b=document.createElement('button');b.type='button';b.className='chip';b.textContent=label;b.setAttribute('aria-pressed','false');b.onclick=()=>{if(active[axis].has(value))active[axis].delete(value);else active[axis].add(value);b.setAttribute('aria-pressed',active[axis].has(value)?'true':'false');render();};node.appendChild(b);}}
+makeFilters('source','source-filters');makeFilters('modality','modality-filters');makeFilters('sexuality','sexuality-filters');makeFilters('touch','touch-filters');makeFilters('nudity','nudity-filters');makeFilters('relationship','relationship-filters');$('search').addEventListener('input',render);
+Promise.all(feeds.map(async feed=>{const r=await fetch(feed.url,{cache:'no-store'});if(!r.ok)throw new Error(`${feed.label}: HTTP ${r.status}`);return parseIcs(await r.text(),feed)})).then(groups=>{events=groups.flat().map(ev=>({...ev,taxonomy:classify(ev)})).sort((a,b)=>a.start-b.start||a.summary.localeCompare(b.summary));render();}).catch(err=>{$('summary').textContent='שגיאה בטעינה';$('grid').innerHTML=`<div class="error">${escapeHtml(err.message)}</div>`;});
+})();
+</script>
+</body></html>
