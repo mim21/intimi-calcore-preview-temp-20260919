@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<title>Calendar Ops</title>
+<style>
+:root{color-scheme:dark light;--bg:#0b1020;--panel:#141b2d;--panel2:#192238;--text:#f4f7fb;--muted:#9aa7bd;--line:#283653;--accent:#78a9ff;--green:#6ee7a0;--amber:#ffd166;--pink:#ff91b8;--shadow:0 10px 30px rgba(0,0,0,.22)}
+*{box-sizing:border-box}html{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}body{margin:0;min-height:100vh;background:radial-gradient(circle at 10% -10%,#203867 0,transparent 34%),var(--bg)}
+main{max-width:980px;margin:auto;padding:calc(22px + env(safe-area-inset-top)) 16px calc(42px + env(safe-area-inset-bottom))}
+header{margin-bottom:20px}.eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:800}h1{font-size:clamp(2rem,8vw,3.6rem);line-height:1;margin:.35rem 0 .55rem;letter-spacing:-.04em}.intro{margin:0;color:var(--muted);max-width:670px}
+.search{width:100%;margin:18px 0 6px;border:1px solid var(--line);background:rgba(20,27,45,.88);color:var(--text);border-radius:16px;padding:13px 15px;font:inherit;outline:none}.search:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(120,169,255,.16)}
+section{margin-top:24px}.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:10px}.section-head h2{font-size:1.04rem;margin:0}.section-head span{font-size:.8rem;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:10px}.card{display:block;position:relative;border:1px solid var(--line);background:linear-gradient(180deg,var(--panel2),var(--panel));border-radius:18px;padding:15px 15px 14px;text-decoration:none;color:var(--text);box-shadow:var(--shadow);min-height:108px;transition:transform .12s ease,border-color .12s ease}.card:active{transform:scale(.985)}.card:hover{border-color:#48628f}.top{display:flex;align-items:center;justify-content:space-between;gap:10px}.name{font-weight:750;font-size:1rem}.desc{font-size:.84rem;color:var(--muted);margin-top:8px;line-height:1.35}.url{font-size:.72rem;color:#7f90ad;margin-top:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.badge{font-size:.67rem;font-weight:850;letter-spacing:.06em;border:1px solid currentColor;border-radius:999px;padding:3px 7px;white-space:nowrap}.legacy{color:var(--green)}.preview{color:var(--amber)}.worker{color:var(--pink)}.github{color:var(--accent)}
+.note{border:1px dashed var(--line);border-radius:16px;padding:12px 14px;color:var(--muted);font-size:.83rem;background:rgba(20,27,45,.48)}footer{margin-top:30px;color:var(--muted);font-size:.75rem;text-align:center}.hidden{display:none!important}
+@media (prefers-color-scheme:light){:root{--bg:#f4f6fb;--panel:#fff;--panel2:#fff;--text:#111827;--muted:#68758a;--line:#d9e0ec;--accent:#285fb8;--green:#17834d;--amber:#9b6500;--pink:#b02b66;--shadow:0 8px 24px rgba(38,55,82,.09)}body{background:radial-gradient(circle at 10% -10%,#dbe8ff 0,transparent 34%),var(--bg)}.search{background:#fff;color:var(--text)}.url{color:#7b8798}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div class="eyebrow">mim21 · calendar control surface</div>
+<h1>Calendar Ops</h1>
+<p class="intro">One place for live calendars, Calendar Core previews, subscription workers and project control links.</p>
+<input id="q" class="search" type="search" placeholder="Search calendars, previews, workers…" autocomplete="off" aria-label="Search links">
+</header>
+
+<section>
+<div class="section-head"><h2>Live / Legacy calendars</h2><span>public GitHub Pages</span></div>
+<div class="grid">
+<a class="card" data-search="intimi bluz legacy live github pages" href="https://mim21.github.io/intimi-beluz-events/"><div class="top"><span class="name">Intimi Bluz</span><span class="badge legacy">LEGACY</span></div><div class="desc">Current public Intimi calendar.</div><div class="url">mim21.github.io/intimi-beluz-events/</div></a>
+<a class="card" data-search="merhav bari legacy live github pages" href="https://mim21.github.io/merhav-bari/"><div class="top"><span class="name">Merhav Bari</span><span class="badge legacy">LEGACY</span></div><div class="desc">Current public Merhav calendar.</div><div class="url">mim21.github.io/merhav-bari/</div></a>
+<a class="card" data-search="gmail events legacy live github pages" href="https://mim21.github.io/gmail-events/"><div class="top"><span class="name">Gmail Events</span><span class="badge legacy">LEGACY</span></div><div class="desc">Current public Gmail Events calendar.</div><div class="url">mim21.github.io/gmail-events/</div></a>
+<a class="card" data-search="kfar saba legacy live github pages" href="https://mim21.github.io/kfar-saba-events/"><div class="top"><span class="name">Kfar Saba Events</span><span class="badge legacy">LEGACY</span></div><div class="desc">Current public Kfar Saba calendar.</div><div class="url">mim21.github.io/kfar-saba-events/</div></a>
+</div>
+</section>
+
+<section>
+<div class="section-head"><h2>Calendar Core previews</h2><span>isolated test surfaces</span></div>
+<div class="grid">
+<a class="card" data-search="intimi bluz calendar core preview test" href="https://mim21.github.io/intimi-calcore-preview-temp-20260919/"><div class="top"><span class="name">Intimi Bluz</span><span class="badge preview">PREVIEW</span></div><div class="desc">Calendar Core preview.</div><div class="url">intimi-calcore-preview-temp-20260919</div></a>
+<a class="card" data-search="merhav bari calendar core preview test" href="https://mim21.github.io/merhav-calcore-preview-temp-20260918/"><div class="top"><span class="name">Merhav Bari</span><span class="badge preview">PREVIEW</span></div><div class="desc">Calendar Core preview.</div><div class="url">merhav-calcore-preview-temp-20260918</div></a>
+<a class="card" data-search="gmail events calendar core preview test" href="https://mim21.github.io/gmail-calcore-preview-temp-20260919/"><div class="top"><span class="name">Gmail Events</span><span class="badge preview">PREVIEW</span></div><div class="desc">Calendar Core preview.</div><div class="url">gmail-calcore-preview-temp-20260919</div></a>
+<a class="card" data-search="kfar saba calendar core preview test" href="https://mim21.github.io/kfar-saba-calcore-preview-temp-20260919/"><div class="top"><span class="name">Kfar Saba Events</span><span class="badge preview">PREVIEW</span></div><div class="desc">Calendar Core preview.</div><div class="url">kfar-saba-calcore-preview-temp-20260919</div></a>
+</div>
+</section>
+
+<section>
+<div class="section-head"><h2>Subscription workers</h2><span>verified endpoints only</span></div>
+<div class="grid">
+<a class="card" data-search="intimi bluz subscription tracker cloudflare worker apple ics" href="https://intimi-beluz-calendar.merhav-bari.workers.dev/calendar.ics?src=apple"><div class="top"><span class="name">Intimi Bluz tracker</span><span class="badge worker">WORKER</span></div><div class="desc">Current Cloudflare subscription/feed tracker endpoint.</div><div class="url">intimi-beluz-calendar.merhav-bari.workers.dev</div></a>
+</div>
+<div class="note" style="margin-top:10px">Other subscription-worker links will be added here only after their current endpoints are verified. No secrets or token-bearing admin URLs belong on this public page.</div>
+</section>
+
+<section>
+<div class="section-head"><h2>GitHub / project control</h2><span>may require GitHub login</span></div>
+<div class="grid">
+<a class="card" data-search="calendar core github repository" href="https://github.com/mim21-projects/calendar-core"><div class="top"><span class="name">Calendar Core</span><span class="badge github">GITHUB</span></div><div class="desc">Canonical Calendar Core repository.</div><div class="url">mim21-projects/calendar-core</div></a>
+<a class="card" data-search="calendar core pr 51 preview parity draft" href="https://github.com/mim21-projects/calendar-core/pull/51"><div class="top"><span class="name">Calendar Core PR #51</span><span class="badge github">GITHUB</span></div><div class="desc">Current preview/parity implementation draft.</div><div class="url">calendar-core/pull/51</div></a>
+<a class="card" data-search="development control plane dcp issue 64 calendar core" href="https://github.com/mim21-projects/development-control-plane/issues/64"><div class="top"><span class="name">DCP #64</span><span class="badge github">GITHUB</span></div><div class="desc">Calendar Core production/parity control issue.</div><div class="url">development-control-plane/issues/64</div></a>
+<a class="card" data-search="intimi bluz legacy source repository github" href="https://github.com/mim21-projects/intimi-beluz-events-src"><div class="top"><span class="name">Intimi Legacy source</span><span class="badge github">GITHUB</span></div><div class="desc">Private canonical source/runtime repository.</div><div class="url">mim21-projects/intimi-beluz-events-src</div></a>
+</div>
+</section>
+
+<footer>Calendar Ops · links are intentionally non-secret · updated 2026-09-19</footer>
+</main>
+<script>
+const q=document.getElementById('q');
+q.addEventListener('input',()=>{const s=q.value.trim().toLowerCase();document.querySelectorAll('.card').forEach(c=>c.classList.toggle('hidden',s&&!((c.dataset.search||'')+' '+c.textContent).toLowerCase().includes(s)));});
+</script>
+</body>
+</html>
