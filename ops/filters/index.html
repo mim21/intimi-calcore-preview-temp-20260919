@@ -7,7 +7,7 @@
 <title>ארועי מגע · Filters</title>
 <style>
 :root{--bg:#0b1020;--panel:#141b2d;--panel2:#192238;--text:#f5f7fb;--muted:#9aa7bd;--line:#2b3856;--accent:#7db0ff;--chip:#1d2944;--shadow:0 10px 28px rgba(0,0,0,.2)}
-*{box-sizing:border-box}html{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;font-size:19px;background:var(--bg);color:var(--text);overflow-x:hidden}body{margin:0;min-height:100vh;background:radial-gradient(circle at 12% -8%,#213968 0,transparent 32%),var(--bg);overflow-x:hidden}main{width:100%;max-width:980px;margin:auto;padding:calc(22px + env(safe-area-inset-top)) 14px calc(44px + env(safe-area-inset-bottom));overflow:hidden}a{color:inherit}.back{display:inline-block;color:var(--muted);text-decoration:none;margin-bottom:12px}h1{font-size:clamp(2.1rem,9vw,3.9rem);line-height:.98;margin:0;letter-spacing:-.04em}.sub{margin:.55rem 0 0;color:var(--muted);font-size:.94rem}.summary{margin-top:9px;font-weight:780}.search{width:100%;margin:16px 0 8px;background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:15px;padding:14px 15px;font:inherit;outline:none}.filters{display:grid;gap:12px;margin:14px 0 20px;min-width:0}.axis{min-width:0}.filter-title{font-size:.82rem;color:var(--muted);margin:0 0 6px}.chips{display:flex;flex-wrap:wrap;gap:7px;max-width:100%;padding:1px 0 4px;overflow:visible}.chip{flex:0 1 auto;max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:center;border:1px solid var(--line);background:var(--chip);color:var(--text);border-radius:999px;padding:8px 12px;font:inherit;font-size:.82rem;cursor:pointer}.chip[aria-pressed="true"]{background:var(--accent);color:#07111f;border-color:var(--accent);font-weight:800}.clear{display:none;border:0;background:none;color:var(--accent);font:inherit;font-size:.8rem;padding:0;cursor:pointer}.clear.visible{display:inline}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:11px;min-width:0}.card{min-width:0;border:1px solid var(--line);background:linear-gradient(180deg,var(--panel2),var(--panel));border-radius:18px;padding:16px;box-shadow:var(--shadow)}.top{display:flex;gap:8px;align-items:center;justify-content:space-between}.source{font-size:.7rem;font-weight:850;border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--accent)}.when{font-size:.78rem;color:var(--muted)}.title{font-size:1.18rem;line-height:1.22;margin:10px 0 7px;overflow-wrap:anywhere}.where{color:var(--muted);font-size:.88rem;margin:0;overflow-wrap:anywhere}.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px}.tag{max-width:100%;font-size:.68rem;border-radius:999px;padding:4px 7px;background:rgba(125,176,255,.11);border:1px solid rgba(125,176,255,.24);color:#b8d5ff;overflow-wrap:anywhere}.meta{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:12px;font-size:.8rem}.details{color:var(--accent);text-decoration:none;font-weight:750}.empty,.loading,.error{border:1px dashed var(--line);border-radius:16px;padding:20px;text-align:center;color:var(--muted);grid-column:1/-1}.error{color:#ffb4b4}.note{font-size:.72rem;color:var(--muted);margin-top:22px;line-height:1.45}@media(max-width:520px){.grid{grid-template-columns:1fr}.card{padding:17px}.title{font-size:1.22rem}.chip{font-size:.78rem;padding:7px 10px}}
+*{box-sizing:border-box}html{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;font-size:19px;background:var(--bg);color:var(--text);overflow-x:hidden}body{margin:0;min-height:100vh;background:radial-gradient(circle at 12% -8%,#213968 0,transparent 32%),var(--bg);overflow-x:hidden}main{width:100%;max-width:980px;margin:auto;padding:calc(22px + env(safe-area-inset-top)) 14px calc(44px + env(safe-area-inset-bottom));overflow:hidden}a{color:inherit}.back{display:inline-block;color:var(--muted);text-decoration:none;margin-bottom:12px}h1{font-size:clamp(2.1rem,9vw,3.9rem);line-height:.98;margin:0;letter-spacing:-.04em}.sub{margin:.55rem 0 0;color:var(--muted);font-size:.94rem}.summary{margin-top:9px;font-weight:780}.search{width:100%;margin:16px 0 8px;background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:15px;padding:14px 15px;font:inherit;outline:none}.filters{display:grid;gap:12px;margin:14px 0 20px;min-width:0}.axis{min-width:0}.filter-title{font-size:.82rem;color:var(--muted);margin:0 0 6px}.chips{display:flex;flex-wrap:wrap;gap:7px;max-width:100%;padding:1px 0 4px;overflow:visible}.chip{flex:0 1 auto;max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:center;border:1px solid var(--line);background:var(--chip);color:var(--text);border-radius:999px;padding:8px 12px;font:inherit;font-size:.82rem;cursor:pointer}.chip[aria-pressed="true"]{background:var(--accent);color:#07111f;border-color:var(--accent);font-weight:800}.chip[data-zero="true"]{opacity:.4}.chip .n{color:var(--muted);font-size:.78em}.chip[aria-pressed="true"] .n{color:#07111f;opacity:.7}.clear{display:none;border:0;background:none;color:var(--accent);font:inherit;font-size:.8rem;padding:0;cursor:pointer}.clear.visible{display:inline}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:11px;min-width:0}.card{min-width:0;border:1px solid var(--line);background:linear-gradient(180deg,var(--panel2),var(--panel));border-radius:18px;padding:16px;box-shadow:var(--shadow)}.top{display:flex;gap:8px;align-items:center;justify-content:space-between}.source{font-size:.7rem;font-weight:850;border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--accent)}.when{font-size:.78rem;color:var(--muted)}.title{font-size:1.18rem;line-height:1.22;margin:10px 0 7px;overflow-wrap:anywhere}.where{color:var(--muted);font-size:.88rem;margin:0;overflow-wrap:anywhere}.thumb{width:100%;border-radius:12px;margin:8px 0;display:block;max-height:220px;object-fit:cover}.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px}.tag{max-width:100%;font-size:.68rem;border-radius:999px;padding:4px 7px;background:rgba(125,176,255,.11);border:1px solid rgba(125,176,255,.24);color:#b8d5ff;overflow-wrap:anywhere}.meta{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:12px;font-size:.8rem}.details{color:var(--accent);text-decoration:none;font-weight:750}.empty,.loading,.error{border:1px dashed var(--line);border-radius:16px;padding:20px;text-align:center;color:var(--muted);grid-column:1/-1}.error{color:#ffb4b4}.note{font-size:.72rem;color:var(--muted);margin-top:22px;line-height:1.45}@media(max-width:520px){.grid{grid-template-columns:1fr}.card{padding:17px}.title{font-size:1.22rem}.chip{font-size:.78rem;padding:7px 10px}}
 </style>
 </head>
 <body><main>
@@ -21,19 +21,154 @@
 </header>
 <section id="filters" class="filters" aria-label="מסננים"></section>
 <section id="grid" class="grid"><div class="loading">טוען את הפלט המאושר של Calendar Core…</div></section>
-<p class="note">מסך זה אינו מסווג אירועים בעצמו. הוא קורא את הפלט שכבר סווג על ידי Calendar Core ומציג את המסננים כצ׳יפים.</p>
+<p class="note">מסך זה אינו מסווג אירועים בעצמו. הוא קורא את events.json שכבר סווג על ידי Calendar Core (Core), ומבצע התאמת ערכים/חיפוש טקסט מקומי בלבד בדפדפן. קטגוריות הסינון קבועות לפי הסכמה של Core ונשארות גלויות גם כשאין להן אירוע תואם היום.</p>
 </main>
 <script>
 (()=>{'use strict';
-const $=id=>document.getElementById(id), grid=$('grid'), filters=$('filters'), search=$('search'), summary=$('summary'), clear=$('clear');
-const active=new Map(); let cards=[];
+const $=id=>document.getElementById(id), grid=$('grid'), filtersEl=$('filters'), search=$('search'), summary=$('summary'), clear=$('clear');
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function valuesFor(doc){const out=[];doc.querySelectorAll('select[data-filter]').forEach(sel=>{const key=sel.dataset.filter;const label=doc.querySelector('label[for="'+sel.id+'"]')?.textContent.trim()||key;const values=[...sel.options].map(o=>o.value.trim()).filter(Boolean);if(values.length)out.push({key,label,values})});return out}
-function eventAxes(node,axes){const tags=[...node.querySelectorAll('.event-taxonomy-tag')].map(x=>x.textContent.trim());const via=node.querySelector('.event-discovered-via')?.textContent.replace(/^.*?:\s*/,'').trim()||'';const source=node.querySelector('.event-source')?.textContent.replace(/^.*?:\s*/,'').trim()||'';const out={};for(const axis of axes){out[axis.key]=new Set();for(const v of axis.values){if((axis.key==='calendar'&&via.includes(v))||(axis.key==='source'&&source.includes(v))||tags.includes(v))out[axis.key].add(v)}}return out}
-function buildFilters(axes){filters.innerHTML='';for(const axis of axes){active.set(axis.key,new Set());const wrap=document.createElement('div');wrap.className='axis';wrap.innerHTML='<p class="filter-title">'+esc(axis.label)+'</p><div class="chips"></div>';const row=wrap.querySelector('.chips');for(const value of axis.values){const b=document.createElement('button');b.type='button';b.className='chip';b.textContent=value;b.dataset.axis=axis.key;b.dataset.value=value;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{const set=active.get(axis.key);if(set.has(value))set.delete(value);else set.add(value);b.setAttribute('aria-pressed',set.has(value)?'true':'false');apply()});row.appendChild(b)}filters.appendChild(wrap)}}
-function apply(){const q=search.value.trim().toLowerCase();let shown=0, any=false;for(const set of active.values())if(set.size)any=true;for(const c of cards){let ok=!q||c.text.includes(q);for(const [axis,set] of active){if(!ok)break;if(set.size){const own=c.axes[axis]||new Set();ok=[...set].some(v=>own.has(v))}}c.node.hidden=!ok;if(ok)shown++}summary.textContent=shown+' מתוך '+cards.length+' אירועים';clear.classList.toggle('visible',any||!!q)}
-clear.addEventListener('click',()=>{search.value='';for(const set of active.values())set.clear();document.querySelectorAll('.chip[aria-pressed="true"]').forEach(b=>b.setAttribute('aria-pressed','false'));apply()});search.addEventListener('input',apply);
-fetch('../global/index.html',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.text()}).then(html=>{const doc=new DOMParser().parseFromString(html,'text/html');const axes=valuesFor(doc);buildFilters(axes);cards=[...doc.querySelectorAll('.event')].map(ev=>{const node=document.createElement('article');node.className='card';const title=ev.querySelector('.event-title')?.textContent.trim()||'';const when=ev.querySelector('.event-when')?.textContent.trim()||'';const where=ev.querySelector('.event-where')?.textContent.trim()||'';const via=ev.querySelector('.event-discovered-via')?.textContent.replace(/^.*?:\s*/,'').trim()||'';const tags=[...ev.querySelectorAll('.event-taxonomy-tag')].map(x=>x.textContent.trim());const url=ev.querySelector('.event-url')?.href||'';node.innerHTML='<div class="top"><span class="source">'+esc(via||'Core')+'</span><span class="when">'+esc(when)+'</span></div><h2 class="title">'+esc(title)+'</h2>'+(where?'<p class="where">'+esc(where)+'</p>':'')+(tags.length?'<div class="tags">'+tags.map(t=>'<span class="tag">'+esc(t)+'</span>').join('')+'</div>':'')+(url?'<div class="meta"><a class="details" href="'+esc(url)+'" rel="noopener noreferrer">פרטים</a></div>':'');grid.appendChild(node);return{node,text:ev.textContent.toLowerCase(),axes:eventAxes(ev,axes)}});grid.querySelector('.loading')?.remove();apply()}).catch(err=>{grid.innerHTML='<div class="error">לא ניתן לטעון את פלט Calendar Core: '+esc(err.message)+'</div>';summary.textContent='שגיאה בטעינה'});
+const active=new Map();       // axisKey -> Set(value)
+let closedAxes=[];            // [{key,label,options:[{value,label}]}]
+let openAxes=[];              // [{key,label}]
+let events=[];                // raw event docs from events.json
+let axisValueGetters={};      // key -> (event)=>Set(values)
+
+function valuesForEvent(event, axisKey){
+  if(axisKey==='modality') return new Set(event.taxonomy?.modalities||[]);
+  if(['touch','sexuality','nudity','relationship'].includes(axisKey)){
+    const v=event.taxonomy?.[axisKey]; return v && v!=='unknown' ? new Set([v]) : new Set();
+  }
+  if(axisKey==='source') return new Set(event.source ? [event.source] : []);
+  if(axisKey==='calendar') return new Set(event.discovered_via||[]);
+  return new Set();
+}
+
+function formatWhen(event){
+  try{
+    const start=new Date(event.start);
+    const opts={dateStyle:'medium', timeStyle: event.all_day?undefined:'short'};
+    const fmt=new Intl.DateTimeFormat('he-IL', event.all_day?{dateStyle:'medium'}:opts);
+    let out=fmt.format(start);
+    if(event.end && !event.all_day){
+      const end=new Date(event.end);
+      out+= '–' + new Intl.DateTimeFormat('he-IL',{timeStyle:'short'}).format(end);
+    }
+    return out;
+  }catch(e){ return event.start||''; }
+}
+
+function labelFor(axisKey, value){
+  const axis=closedAxes.find(a=>a.key===axisKey);
+  if(!axis) return value;
+  const opt=axis.options.find(o=>o.value===value);
+  return opt ? opt.label : value;
+}
+
+function currentlyShown(){
+  const q=search.value.trim().toLowerCase();
+  return events.filter(ev=>{
+    if(q){
+      const hay=[ev.title,ev.location,ev.description].filter(Boolean).join(' ').toLowerCase();
+      if(!hay.includes(q)) return false;
+    }
+    for(const [axisKey,set] of active){
+      if(!set.size) continue;
+      const own=axisValueGetters[axisKey](ev);
+      if(![...set].some(v=>own.has(v))) return false;
+    }
+    return true;
+  });
+}
+
+function renderFilters(){
+  filtersEl.innerHTML='';
+  const shown=currentlyShown();
+  const axesToRender=[
+    ...closedAxes.map(a=>({...a, kind:'closed'})),
+    ...openAxes.map(a=>({key:a.key, label:a.label, kind:'open',
+      options:[...new Set(shown.flatMap(ev=>[...axisValueGetters[a.key](ev)]))].sort().map(v=>({value:v,label:v}))
+    })),
+  ];
+  for(const axis of axesToRender){
+    if(!active.has(axis.key)) active.set(axis.key, new Set());
+    if(axis.kind==='open' && axis.options.length===0) continue; // genuinely open-ended: nothing to offer yet
+    const wrap=document.createElement('div');
+    wrap.className='axis';
+    wrap.innerHTML='<p class="filter-title">'+esc(axis.label)+'</p><div class="chips"></div>';
+    const row=wrap.querySelector('.chips');
+    for(const opt of axis.options){
+      const count=shown.filter(ev=>axisValueGetters[axis.key](ev).has(opt.value)).length;
+      const b=document.createElement('button');
+      b.type='button'; b.className='chip';
+      b.dataset.zero=String(count===0);
+      b.innerHTML=esc(opt.label)+' <span class="n">('+count+')</span>';
+      b.dataset.axis=axis.key; b.dataset.value=opt.value;
+      b.setAttribute('aria-pressed', active.get(axis.key).has(opt.value)?'true':'false');
+      b.addEventListener('click',()=>{
+        const set=active.get(axis.key);
+        if(set.has(opt.value)) set.delete(opt.value); else set.add(opt.value);
+        apply();
+      });
+      row.appendChild(b);
+    }
+    filtersEl.appendChild(wrap);
+  }
+}
+
+function renderCard(ev){
+  const node=document.createElement('article'); node.className='card';
+  const tagList=[];
+  for(const m of (ev.taxonomy?.modalities||[])) tagList.push(labelFor('modality',m));
+  for(const k of ['touch','sexuality','nudity','relationship']){
+    const v=ev.taxonomy?.[k];
+    if(v && v!=='unknown') tagList.push(labelFor(k,v));
+  }
+  const via=(ev.discovered_via||[])[0]||ev.source||'Core';
+  node.innerHTML=
+    '<div class="top"><span class="source">'+esc(via)+'</span><span class="when">'+esc(formatWhen(ev))+'</span></div>'+
+    '<h2 class="title">'+esc(ev.title)+'</h2>'+
+    (ev.image?'<img class="thumb" src="'+esc(ev.image)+'" alt="" loading="lazy">':'')+
+    (ev.location?'<p class="where">'+esc(ev.location)+'</p>':'')+
+    (tagList.length?'<div class="tags">'+tagList.map(t=>'<span class="tag">'+esc(t)+'</span>').join('')+'</div>':'')+
+    (ev.url?'<div class="meta"><a class="details" href="'+esc(ev.url)+'" rel="noopener noreferrer">פרטים</a></div>':'');
+  return node;
+}
+
+function apply(){
+  renderFilters();
+  const shown=currentlyShown();
+  grid.innerHTML='';
+  if(!shown.length){
+    grid.innerHTML='<div class="empty">אין אירועים תואמים</div>';
+  } else {
+    for(const ev of shown) grid.appendChild(renderCard(ev));
+  }
+  summary.textContent=shown.length+' מתוך '+events.length+' אירועים';
+  let anyActive=false; for(const set of active.values()) if(set.size) anyActive=true;
+  clear.classList.toggle('visible', anyActive || !!search.value.trim());
+}
+
+clear.addEventListener('click',()=>{
+  search.value='';
+  for(const set of active.values()) set.clear();
+  apply();
+});
+search.addEventListener('input',apply);
+
+fetch('../global/events.json',{cache:'no-store'})
+  .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+  .then(doc=>{
+    events=doc.events||[];
+    closedAxes=doc.taxonomy_schema||[];
+    openAxes=doc.open_axes||[];
+    for(const axis of closedAxes) axisValueGetters[axis.key]=ev=>valuesForEvent(ev,axis.key);
+    for(const axis of openAxes) axisValueGetters[axis.key]=ev=>valuesForEvent(ev,axis.key);
+    apply();
+  })
+  .catch(err=>{
+    grid.innerHTML='<div class="error">לא ניתן לטעון את פלט Calendar Core: '+esc(err.message)+'</div>';
+    summary.textContent='שגיאה בטעינה';
+  });
 })();
 </script>
 </body></html>

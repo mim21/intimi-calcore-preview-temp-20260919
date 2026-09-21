@@ -1,0 +1,161 @@
+{
+  "schema": "calcore.body-events-public/v1",
+  "generated_at": "2026-09-21T09:55:43.567384+00:00",
+  "count": 0,
+  "taxonomy_schema": [
+    {
+      "key": "modality",
+      "label": "סוג אירוע",
+      "kind": "closed",
+      "options": [
+        {
+          "value": "tantra",
+          "label": "Tantra"
+        },
+        {
+          "value": "cuddle",
+          "label": "Cuddle"
+        },
+        {
+          "value": "dance",
+          "label": "Dance"
+        },
+        {
+          "value": "workshop",
+          "label": "Workshop"
+        },
+        {
+          "value": "party",
+          "label": "Party"
+        },
+        {
+          "value": "lecture",
+          "label": "Lecture"
+        },
+        {
+          "value": "retreat",
+          "label": "Retreat"
+        },
+        {
+          "value": "bodywork",
+          "label": "Bodywork"
+        },
+        {
+          "value": "culture",
+          "label": "Culture"
+        },
+        {
+          "value": "social",
+          "label": "Social"
+        },
+        {
+          "value": "other",
+          "label": "Other"
+        }
+      ]
+    },
+    {
+      "key": "touch",
+      "label": "מגע",
+      "kind": "closed",
+      "options": [
+        {
+          "value": "unknown",
+          "label": "לא ידוע"
+        },
+        {
+          "value": "none",
+          "label": "ללא מגע"
+        },
+        {
+          "value": "optional",
+          "label": "מגע אפשרי"
+        },
+        {
+          "value": "expected",
+          "label": "מגע כחלק מהפעילות"
+        },
+        {
+          "value": "central",
+          "label": "מבוסס מגע"
+        }
+      ]
+    },
+    {
+      "key": "sexuality",
+      "label": "מיניות",
+      "kind": "closed",
+      "options": [
+        {
+          "value": "none",
+          "label": "לא מיני"
+        },
+        {
+          "value": "sensual",
+          "label": "חושני"
+        },
+        {
+          "value": "erotic",
+          "label": "ארוטי"
+        },
+        {
+          "value": "sexual",
+          "label": "מיני"
+        }
+      ]
+    },
+    {
+      "key": "nudity",
+      "label": "עירום",
+      "kind": "closed",
+      "options": [
+        {
+          "value": "none",
+          "label": "ללא עירום"
+        },
+        {
+          "value": "possible",
+          "label": "עירום אפשרי"
+        },
+        {
+          "value": "expected",
+          "label": "עירום צפוי"
+        }
+      ]
+    },
+    {
+      "key": "relationship",
+      "label": "סוג קשר",
+      "kind": "closed",
+      "options": [
+        {
+          "value": "neutral",
+          "label": "ניטרלי לסוג קשר"
+        },
+        {
+          "value": "monogamy",
+          "label": "מונוגמי"
+        },
+        {
+          "value": "non-monogamy",
+          "label": "לא־מונוגמי / פולי"
+        },
+        {
+          "value": "mixed",
+          "label": "סוגי קשר מעורבים"
+        }
+      ]
+    }
+  ],
+  "open_axes": [
+    {
+      "key": "source",
+      "label": "מקור"
+    },
+    {
+      "key": "calendar",
+      "label": "יומן / ערוץ"
+    }
+  ],
+  "events": []
+}
