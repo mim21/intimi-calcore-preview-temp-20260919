@@ -1,7 +1,7 @@
 {
   "schema": "calcore.body-events-public/v1",
-  "generated_at": "2026-09-21T14:30:06.042951+03:00",
-  "count": 0,
+  "generated_at": "2026-09-22T01:27:39.615306+03:00",
+  "count": 1,
   "taxonomy_schema": [
     {
       "key": "modality",
@@ -157,5 +157,35 @@
       "label": "יומן / ערוץ"
     }
   ],
-  "events": []
+  "events": [
+    {
+      "id": "380ec72567049e77f22d473ad5af70c3@intimi-beluz-events",
+      "title": "*ריטריט הזוגות שלנו חוזר🥳♥️* *חצי מהמקומות אזלו* *מתי*? 17.10 יום שבת בתל אביב. *מה יהיה שם*? סדנאות שיעזרו לכם להפוך לגרסה הזוגית הכי טובה שלכם. ✨*תקשורת מקרבת*- כדי שתדעו איך לתקשר בצורה שתקרב ביניכם גם במצבי ריב ✨*מיניות בריאה*- תלמדו את הסודות של זוגות שהתשוקה שלהם עם השנים רק מתגברת, ותעברו סדנה שתכניס לכם יצירתיות וגיוון ✨*ריברסינג זוגי*- טכניקת הנשימה העוצמתית במתכונת זוגית שמחזקת את החיבור ✨סדנאות מוכחות *מחקר* לחיזוק האהבה ולהתאהבות מחודשת זאת לא עוד חוויה זוגית, זאת חוויה שתיתן לכם כלים ותלך אתכם שנים קדימה. בהנחייה של לירי אוזן ובן נובק כל הפרטים כאן: https://www.ben-novak.com/couples-retreat",
+      "start": "2026-10-17T00:00:00+03:00",
+      "end": null,
+      "all_day": true,
+      "location": null,
+      "description": null,
+      "url": null,
+      "image": null,
+      "source": null,
+      "source_url": null,
+      "discovered_via": [
+        "Intimi Bluz"
+      ],
+      "calendar": "Intimi Bluz",
+      "calendar_id": "intimi-beluz-events",
+      "eligibility": "in_scope",
+      "taxonomy": {
+        "modalities": [
+          "retreat",
+          "workshop"
+        ],
+        "touch": "unknown",
+        "sexuality": "sexual",
+        "nudity": "unknown",
+        "relationship": "unknown"
+      }
+    }
+  ]
 }
